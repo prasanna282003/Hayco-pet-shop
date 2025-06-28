@@ -595,7 +595,35 @@
                 border-radius: 50px;
                 padding: 1rem;
             }
+            .footer-container {
+                text-align: center;
+            }
+    
+            .footer-col h3:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+    
+            .social-links {
+                 justify-content: center;
+            }
+    
+            .footer-links {
+                 padding-left: 0;
+           }
+    
+            .footer-links li {
+                   text-align: center;
+    }
+
         }
+
+        @media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
         
         @media (max-width: 576px) {
             .hero h1 {

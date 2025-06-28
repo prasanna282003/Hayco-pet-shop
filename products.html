@@ -716,6 +716,35 @@
                 grid-template-columns: 1fr;
             }
         }
+        @media (max-width: 768px) {
+    /* Add this to your existing mobile styles */
+    .footer-container {
+        text-align: center;
+    }
+    
+    .footer-col h3:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-links {
+        padding-left: 0;
+    }
+    
+    .footer-links li {
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -776,10 +805,10 @@
                 </select>
             </div>
             
-            <!-- <div class="search-box">
+            <div class="search-box">
                 <i class="fas fa-search"></i>
                 <input type="text" placeholder="Search products...">
-            </div> -->
+            </div>
         </div>
         
         <div class="products-grid">
@@ -809,7 +838,7 @@
                         <span class="current-price">₹499</span>
                         <span class="old-price">₹699</span>
                     </div>
-                    <!-- <button class="add-to-cart">Add to Cart</button> -->
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
             
@@ -839,7 +868,7 @@
                         <span class="current-price">₹399</span>
                         <span class="old-price">₹549</span>
                     </div>
-                    <!-- <button class="add-to-cart">Add to Cart</button> -->
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
             
@@ -867,7 +896,7 @@
                     <div class="product-price">
                         <span class="current-price">₹599</span>
                     </div>
-                    <!-- <button class="add-to-cart">Add to Cart</button> -->
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
             
@@ -896,7 +925,7 @@
                     <div class="product-price">
                         <span class="current-price">₹449</span>
                     </div>
-                    <!-- <button class="add-to-cart">Add to Cart</button> -->
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
             
@@ -923,8 +952,8 @@
                     </div>
                     <div class="product-price">
                         <span class="current-price">₹349</span>
-                    <!-- </div>
-                    <button class="add-to-cart">Add to Cart</button> -->
+                    </div>
+                    <!-- <button class="add-to-cart">Add to Cart</button> -->
                 </div>
             </div>
             
@@ -982,7 +1011,7 @@
                     <div class="product-price">
                         <span class="current-price">₹549</span>
                     </div>
-                    <!-- <button class="add-to-cart">Add to Cart</button> -->
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
             
@@ -1011,7 +1040,7 @@
                     <div class="product-price">
                         <span class="current-price">₹249</span>
                     </div>
-                    <!-- <button class="add-to-cart">Add to Cart</button> -->
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -1039,7 +1068,7 @@
                 <div class="category-info">
                     <h3>Dog Collars</h3>
                     <p>Stylish and comfortable collars for your canine companions</p>
-                    <!-- <a href="#" class="shop-now">Shop Now</a> -->
+                    <a href="#" class="shop-now">Shop Now</a>
                 </div>
             </div>
             
@@ -1050,7 +1079,7 @@
                 <div class="category-info">
                     <h3>Cat Collars</h3>
                     <p>Lightweight and safe collars for your feline friends</p>
-                    <!-- <a href="#" class="shop-now">Shop Now</a> -->
+                    <a href="#" class="shop-now">Shop Now</a>
                 </div>
             </div>
             
@@ -1107,7 +1136,7 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    
+                
                 </ul>
             </div>
             
@@ -1132,7 +1161,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Hayco Pet Shop. All Rights Reserved.</p>
+            <p>&copy; 2023 Hayco Pet Shop. All Rights Reserved.</p>
         </div>
     </footer>
 
