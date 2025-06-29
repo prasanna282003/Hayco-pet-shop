@@ -92,14 +92,14 @@
             left: 0;
             transition: width 0.3s ease;
         }
-        
+
+        .nav-links a.active:after,
         .nav-links a:hover:after {
-            width: 100%;
+             width: 100%;
         }
+
         
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+         
         
         .mobile-menu {
             display: none;
@@ -652,7 +652,7 @@
             <h1>Hayco Pet Shop</h1>
         </div>
         <ul class="nav-links">
-            <li><a href="#" class="active">Home</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -858,19 +858,22 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            navbar.classList.toggle('scrolled', window.scrollY > 0);
-        });
+      // Mobile Menu Toggle
+const mobileMenu = document.querySelector('.mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Close mobile menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+        }
+    });
+});
         
         // Animation on Scroll
         const animateOnScroll = () => {
@@ -896,5 +899,38 @@
         
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
+
+
+       // Highlight active page in navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    let currentPage = window.location.pathname.split('/').pop();
+    
+    // Handle home page detection
+    if (!currentPage || currentPage === 'index.html') {
+        currentPage = 'index.html';
+    }
+
+    navLinks.forEach(link => {
+        // Remove 'active' class from all links first
+        link.classList.remove('active');
+        
+        // Get just the filename from the href (remove any # anchors)
+        const linkPage = link.getAttribute('href').split('#')[0];
+        
+        // Add 'active' class if this link matches current page
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+    // Debugging - view this in browser console
+    console.log('Current page:', currentPage);
+    navLinks.forEach(link => {
+        console.log('Link:', link.getAttribute('href'), 'Active:', link.classList.contains('active'));
+    });
+});
     </script>
+
+    
 </body>

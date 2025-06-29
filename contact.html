@@ -92,12 +92,9 @@
             transition: width 0.3s ease;
         }
         
+        .nav-links a.active:after,
         .nav-links a:hover:after {
-            width: 100%;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
+             width: 100%;
         }
         
         .mobile-menu {
@@ -946,6 +943,36 @@
             // Reset form
             contactForm.reset();
         });
+
+        // Highlight active page in navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    let currentPage = window.location.pathname.split('/').pop();
+    
+    // Handle home page detection
+    if (!currentPage || currentPage === 'index.html') {
+        currentPage = 'index.html';
+    }
+
+    navLinks.forEach(link => {
+        // Remove 'active' class from all links first
+        link.classList.remove('active');
+        
+        // Get just the filename from the href (remove any # anchors)
+        const linkPage = link.getAttribute('href').split('#')[0];
+        
+        // Add 'active' class if this link matches current page
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+    // Debugging - view this in browser console
+    console.log('Current page:', currentPage);
+    navLinks.forEach(link => {
+        console.log('Link:', link.getAttribute('href'), 'Active:', link.classList.contains('active'));
+    });
+});
     </script>
 </body>
 </html>
